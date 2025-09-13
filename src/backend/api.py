@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException, File, UploadFile
 from sqlalchemy.orm import Session
 from typing import List, Dict, Any
 import json
+from pydantic import BaseModel
 from database import get_db, ChatSession, Message, Document
 from services.document_service import document_service
 from services.vector_service import vector_service
@@ -9,6 +10,9 @@ from models.ollama_chat import ollama_chat
 from agents.workflows.chat_workflow import process_chat_message
 
 router = APIRouter()
+
+class MessageRequest(BaseModel):
+    message: str
 
 @router.post("/chat")
 def create_chat(name: str, db: Session = Depends(get_db)):
@@ -80,7 +84,7 @@ async def upload_document(chat_id: int, file: UploadFile = File(...), db: Sessio
     }
 
 @router.post("/chat/{chat_id}/message")
-def send_message(chat_id: int, message: str, db: Session = Depends(get_db)):
+def send_message(chat_id: int, request: MessageRequest, db: Session = Depends(get_db)):
     """Send message to chat using LangGraph workflow"""
     
     # Check if chat exists
@@ -106,12 +110,12 @@ def send_message(chat_id: int, message: str, db: Session = Depends(get_db)):
         })
     
     # Process message through workflow
-    result = process_chat_message(chat_id, message, chat_history)
+    result = process_chat_message(chat_id, request.message, chat_history)
     
     # Save user message
     user_msg = Message(
         chat_session_id=chat_id,
-        content=message,
+        content=request.message,
         role="user"
     )
     db.add(user_msg)
