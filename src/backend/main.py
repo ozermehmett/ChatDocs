@@ -4,6 +4,13 @@ import uvicorn
 from database import create_tables
 from api import router
 from config import settings
+import logging
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
 
 # Create FastAPI app
 app = FastAPI(
