@@ -1,0 +1,3 @@
+[submodule "services/embedding-service"]
+	path = services/embedding-service
+	url = https://github.com/ozermehmett/embedding-service.git
