@@ -1,0 +1,21 @@
+# Backend
+fastapi==0.116.1
+uvicorn==0.35.0
+sqlalchemy==2.0.43
+python-dotenv==1.1.1
+
+# Frontend
+streamlit==1.49.1
+
+# AI
+langchain==0.3.27
+langgraph==0.6.7
+chromadb==1.0.21
+
+# Document Processing
+pypdf2==3.0.1
+python-multipart==0.0.20
+
+# Utilities
+pathlib
+datetime

@@ -37,10 +37,17 @@ Thumbs.db
 logs/
 
 # Data directories
+data/
+scripts/data/
+*.logs
 data/uploads/
 data/vector_stores/
 data/database.db
 data/logs/
+
+# Uploads
+uploads/
+vector_stores/
 
 # Streamlit
 .streamlit/
