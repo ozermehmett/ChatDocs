@@ -34,4 +34,4 @@ chat_prompts:
     USER QUESTION: {question}
     
     Provide a helpful answer that considers both our previous conversation and the document context.
-    Always cite your sources using: [Document: {filename}, Page: {page}]
+    Always cite your sources when referencing documents.
