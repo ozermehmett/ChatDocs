@@ -1,7 +1,7 @@
 import logging
 from typing import Dict, Any
-from ..schemas.chat_state import ChatState
-from ...services.vector_service import vector_service
+from agents.schemas.chat_state import ChatState
+from services.vector_service import vector_service
 
 logger = logging.getLogger(__name__)
 

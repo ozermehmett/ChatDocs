@@ -1,8 +1,8 @@
 import logging
 from typing import Dict, Any
-from ..schemas.chat_state import ChatState
-from ...models.ollama_chat import ollama_chat
-from ...prompts.yaml_loader import prompt_loader
+from agents.schemas.chat_state import ChatState
+from models.ollama_chat import ollama_chat
+from prompts.yaml_loader import prompt_loader
 
 logger = logging.getLogger(__name__)
 

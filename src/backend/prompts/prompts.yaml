@@ -14,7 +14,7 @@ chat_prompts:
     USER QUESTION: {question}
     
     Based on the above documents, provide a comprehensive answer with specific source citations.
-    Format citations as: [Document: {filename}, Page: {page}]
+    Format citations as: [Source Document]
 
   no_context: |
     USER QUESTION: {question}

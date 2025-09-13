@@ -1,6 +1,6 @@
 import logging
 from typing import Dict, Any, List
-from ..schemas.chat_state import ChatState
+from agents.schemas.chat_state import ChatState
 
 logger = logging.getLogger(__name__)
 
