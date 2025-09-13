@@ -1,10 +1,10 @@
 import logging
 from typing import Dict, Any
 from langgraph.graph import StateGraph, END
-from ..schemas.chat_state import ChatState
-from ..nodes.retrieve_node import retrieve_documents
-from ..nodes.chat_node import generate_response
-from ..nodes.memory_node import load_chat_history, save_chat_message
+from agents.schemas.chat_state import ChatState
+from agents.nodes.retrieve_node import retrieve_documents
+from agents.nodes.chat_node import generate_response
+from agents.nodes.memory_node import load_chat_history, save_chat_message
 
 logger = logging.getLogger(__name__)
 

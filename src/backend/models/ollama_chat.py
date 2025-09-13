@@ -2,7 +2,7 @@ import requests
 import logging
 from typing import List, Dict
 from .base_chat import BaseChatModel
-from ..config import settings
+from config import settings
 
 logger = logging.getLogger(__name__)
 
