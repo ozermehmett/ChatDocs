@@ -2,6 +2,10 @@
 
 A document-based chat application that allows you to have conversations with your documents using local AI models.
 
+## Demo
+
+![Demo Video](./assets/demo.mp4)
+
 ## Features
 
 - Upload PDF, TXT, and MD documents
