@@ -4,7 +4,7 @@ A document-based chat application that allows you to have conversations with you
 
 ## Demo
 
-![Demo Video](./assets/demo.mp4)
+![Demo](./assets/demo.gif)
 
 ## Features
 
