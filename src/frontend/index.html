@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatDocs</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Sidebar - Chats -->
+        <div class="left-sidebar">
+            <div class="chats-header">
+                <button class="new-chat-btn" id="newChatBtn">+ New Chat</button>
+            </div>
+            <div class="chats-list" id="chatsList">
+                <!-- Chats will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="chat-main">
+            <div class="chat-header">
+                <h2>ChatDocs</h2>
+                <div id="connectionStatus"></div>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="loading" id="loadingIndicator">Loading...</div>
+            </div>
+
+            <div class="chat-input">
+                <div class="input-container">
+                    <textarea 
+                        id="messageInput" 
+                        placeholder="Ask me anything about your documents..."
+                        rows="1"
+                    ></textarea>
+                    <button class="send-button" id="sendButton">
+                        <span>→</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Sidebar - Files -->
+        <div class="right-sidebar">
+            <div class="files-header">
+                <h3>Documents</h3>
+            </div>
+            <div class="files-content">
+                <div class="upload-area" id="uploadArea">
+                    <input type="file" id="fileInput" accept=".pdf,.txt,.md" style="display: none;">
+                    <p>Drop files here or click to upload</p>
+                    <small>Supported: PDF, TXT, MD</small>
+                </div>
+                <div class="file-list" id="fileList">
+                    <!-- Files will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/app.js"></script>
+</body>
+</html>

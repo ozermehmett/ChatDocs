@@ -1,13 +1,36 @@
 services:
-  backend:
-    build: .
+  embedding:
+    build:
+      context: ./services/embedding-service
+      dockerfile: Dockerfile
     ports:
-      - "8080:8080"
+      - "8000:8000"
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    network_mode: host
     environment:
       - FASTAPI_HOST=0.0.0.0
       - FASTAPI_PORT=8080
       - DEBUG=False
+      - EMBEDDING_API_URL=http://localhost:8000
+      - OLLAMA_BASE_URL=http://localhost:11434
     volumes:
-      - ./scripts:/app/scripts
-      - ./src/backend:/app/src/backend
-    command: python scripts/run_backend.py
+      - ./data:/app/data
+    restart: unless-stopped
+    depends_on:
+      - embedding
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend.Dockerfile
+    ports:
+      - "8501:80"
+    restart: unless-stopped
+
+volumes:
+  data:
