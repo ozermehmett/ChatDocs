@@ -19,7 +19,7 @@ class EmbeddingService:
                 f"{self.base_url}/embed",
                 json={"text": texts},
                 headers={"Content-Type": "application/json"},
-                timeout=30
+                timeout=120
             )
             response.raise_for_status()
             
