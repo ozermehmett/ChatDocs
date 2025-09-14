@@ -1,7 +1,5 @@
 # ChatDocs
 
-# ChatDocs
-
 A document-based chat application that allows you to have conversations with your documents using local AI models.
 
 ## Features
